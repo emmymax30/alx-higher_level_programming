@@ -1,5 +1,4 @@
-print("The Zen of Python, by Tim Peters\
-\
+print("The Zen of Python, by Tim Peters\n
 Beautiful is better than ugly.\
 Explicit is better than implicit.\
 Simple is better than complex.\
