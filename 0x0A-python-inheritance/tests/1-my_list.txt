@@ -1,0 +1,131 @@
+#!/usr/bin/python3
+""" text file for doctests"""
+
+>>> my_list = __import__('1-my_list').MyList.print_sorted
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> print(my_list([2, 1, 3, 4]))
+[1, 2, 3, 4]
+None
+
+>>> print(my_list([-1, 2, -3, 4]))
+[-3, -1, 2, 4]
+None
+
+>>> my_list([0, 2, 1, 3])
+[0, 1, 2, 3]
+
+>>> goku = [1, 3, 2]
+>>> goku
+[1, 3, 2]
+
+>>> my_list(goku)
+[1, 2, 3]
+
+>>> goku.append(-1)
+>>> goku
+[1, 3, 2, -1]
+
+>>> my_list(goku)
+[-1, 1, 2, 3]
+
+>>> my_list([])
+[]
+
+>>> my_list()
+Traceback (most recent call last):
+...
+TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+>>> goku = [1, 2]
+>>> goku.append(3)
+>>> goku
+[1, 2, 3]
+
+>>> my_list(goku)
+[1, 2, 3]
+
+>>> goku = [1, 2, 3]
+>>> goku.append(-2)
+>>> goku
+[1, 2, 3, -2]
+
+>>> goku.append(-4)
+>>> goku
+[1, 2, 3, -2, -4]
+
+>>> my_list(goku)
+[-4, -2, 1, 2, 3]
+
+>>> my_list(1, 2, 3)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 3 were given
+
+>>> type(MyList())
+<class '1-my_list.MyList'>
+
+>>> nothing = MyList()
+>>> nothing.print_sorted()
+[]
+
+>>> issubclass(MyList, list)
+True
+
+>>> '__str__' in dir(MyList)
+True
+
+>>> '__init__' in dir(MyList)
+True
+
+>>> test2 = MyList()
+>>> test2.append(1)
+>>> test2.append(3)
+>>> test2.append(5)
+>>> print(test2)
+[1, 3, 5]
+>>> test2.print_sorted()
+[1, 3, 5]
+
+>>> test2 = MyList()
+>>> test2.append(-1)
+>>> test2.append(-3)
+>>> test2.append(-5)
+>>> test2.print_sorted()
+[-5, -3, -1]
+
+>>> test2 = MyList()
+>>> test2.append("a")
+>>> test2.append("b")
+>>> test2.append("c")
+>>> test2.print_sorted()
+['a', 'b', 'c']
+
+>>> test3 = MyList([1,2,3,0])
+>>> print(test3)
+[1, 2, 3, 0]
+
+>>> test3.print_sorted()
+[0, 1, 2, 3]
+
+>>> issubclass(MyList, list)
+True
+
+>>> test1ele = MyList()
+>>> test1ele.append(1)
+>>> test1ele.print_sorted()
+[1]
+
+>>> test0ele = MyList()
+>>> test0ele.print_sorted()
+[]
+
+>>> test5 = MyList()
+>>> test5.append("z")
+>>> test5.print_sorted()
+['z']
+
+>>> gokucheck = MyList()
+>>> type(gokucheck)
+<class '1-my_list.MyList'>
