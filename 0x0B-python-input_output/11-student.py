@@ -11,6 +11,21 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """Returns class to a dictionaty"""
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        dic = {}
+        for item in attrs:
+            if item is "first_name":
+                dic[item] = self.first_name
+            elif item is "last_name":
+                dic[item] = self.last_name
+            elif item is "age":
+                dic[item] = self.age
+        return dic
+
+    def reload_from_json(self, json):
+        """Replacing values of a class from dict"""
+        for item in json:
+            self.__dict__.update({item: json.get(item)})
